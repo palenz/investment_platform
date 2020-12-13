@@ -1,6 +1,8 @@
 import psycopg2
 import psycopg2.extras as ext
 
+# This python code will run sql commands that are passed into it.
+
 def run_sql(sql, values = None):
     conn = None
     results = []

@@ -1,9 +1,6 @@
 class Company:
     
-    def __init__(self, name, industry, investor_id):
+    def __init__(self, name, industry, id = None):
         self.name = name
         self.industry = industry
-        self.rounds = []
-        self.investors = []
-        self.valuation = []
-        self.investor_id = investor_id
+        self.id = id
