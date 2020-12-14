@@ -9,4 +9,29 @@ def save(company):
     company.id = results[0]['id']
     return company
 
+def select_all():
+    companies = []
 
+    sql = 'SELECT * FROM companies'
+    results = run_sql(sql)
+
+    for row in results:
+        company = Company(row['name'], row['industry'], row['id'])
+        companies.append(company)
+    
+    return companies
+
+def select(id):
+    company = None
+    sql = 'SELECT * FROM companies WHERE id=%s'
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        company = Company(result['name'], result['industry'], result['id'])
+    
+    return company
+
+def delete_all():
+    sql = 'DELETE FROM companies'
+    run_sql(sql)
