@@ -49,3 +49,8 @@ def company(investment):
     results = run_sql(sql, values)[0]
     company = Company(results['name'], results['industry'], results['id'])
     return company
+
+def delete(id):
+    sql = 'DELETE FROM investments WHERE id=%s'
+    values = [id]
+    run_sql(sql, values)

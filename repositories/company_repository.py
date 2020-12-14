@@ -32,6 +32,18 @@ def select(id):
     
     return company
 
+def investors(company):
+    investors = []
+    sql = 'SELECT investors.* FROM investors INNER JOIN investments ON investments.investor_id = investors.id WHERE company_id = %s'
+    values = [company.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        investor = Investor(row['name'], row['email'], row['id'])
+        investors.append(investor)
+
+    return investors
+
 def delete_all():
     sql = 'DELETE FROM companies'
     run_sql(sql)
