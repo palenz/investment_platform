@@ -2,7 +2,6 @@ from db.run_sql import run_sql
 from models.investor import Investor
 from models.company import Company
 
-
 def save(investor):
     sql = 'INSERT INTO investors (name, email) VALUES (%s, %s) RETURNING id'
     values = [investor.name, investor.email]
