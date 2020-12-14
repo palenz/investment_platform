@@ -20,7 +20,7 @@ CREATE TABLE investments (
     company_id INT REFERENCES companies(id) ON DELETE CASCADE,
     equity INT,
     payment INT,
-    date INT
+    date_of_investment DATE
 );
 
 

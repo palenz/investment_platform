@@ -5,5 +5,5 @@ class Investment:
         self.company = company
         self.equity = equity
         self.payment = payment
-        self.date = date
+        self.date_of_investment = date_of_investment
         self.id = id
