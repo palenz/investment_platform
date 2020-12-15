@@ -14,3 +14,22 @@ def show(id):
     investor = investor_repository.select(id)
     companies = investor_repository.companies(investor)
     return render_template("investors/show.html", investor=investor, companies=companies)
+
+@investors_blueprint.route("/investors/<id>/delete", methods=['POST'])
+def delete_investor(id):
+    investor_repository.delete(id)
+    return redirect('/investors')
+
+@investors_blueprint.route("/investors/new", methods=['GET'])
+def new_investor():
+    return render_template("investors/new.html")
+
+@investors_blueprint.route("/investors", methods=['POST'])
+def create_investr():
+    investor_name = request.form['name']
+    investor_email = request.form['email']
+    
+    investor = Investor(investor_name, investor_email)
+    investor_repository.save(investor)
+
+    return redirect('/investors')

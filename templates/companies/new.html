@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add new company</h1>
+
+<form action="/companies" method="post">
+
+    <label for="name">Company name</label>
+    <input type="text" id="name" name="name">
+
+    <label for="industry">Industry</label>
+    <input type="text" id="industry" name="industry">
+
+
+    <input class="btn btn--action" type='submit'>
+
+
+</form>
+
+{% endblock %}
+

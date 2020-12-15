@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Companies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Industry</th>
+  </tr>
+  {% for company in companies %}
+  <tr>
+    <td><a href="/companies/{{company.id}}"> {{company.name}} </a></td>
+    <td>|</td>
+    <td>{{ company.industry }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<a href="/companies/new">Add a new company</a>
+
+{% endblock %}

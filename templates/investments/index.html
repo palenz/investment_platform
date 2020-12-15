@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Investments</h1>
+
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/investments/new">New investment round</a>
+</p>
+
+<ul>
+    {% for investment in investments %}
+    <li>
+        <p>{{investment.investor.name}} - {{investment.company.name}} - {{investment.equity}}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

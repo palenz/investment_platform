@@ -17,3 +17,22 @@ def show(id):
     company = company_repository.select(id)
     investors = company_repository.investors(company)
     return render_template("companies/show.html", company=company, investors=investors)
+
+@companies_blueprint.route("/companies/<id>/delete", methods=['POST'])
+def delete_company(id):
+    company_repository.delete(id)
+    return redirect('/companies')
+
+@companies_blueprint.route("/companies/new", methods=['GET'])
+def new_investment():
+    return render_template("companies/new.html")
+
+@companies_blueprint.route("/companies", methods=['POST'])
+def create_company():
+    company_name = request.form['name']
+    company_industry = request.form['industry']
+    
+    company = Company(company_name, company_industry)
+    company_repository.save(company)
+
+    return redirect('/companies')

@@ -1,6 +1,6 @@
 class Investment:
 
-    def __init__(self, investor, company, equity, payment, date, id = None):
+    def __init__(self, investor, company, equity, payment, date_of_investment, id = None):
         self.investor = investor
         self.company = company
         self.equity = equity

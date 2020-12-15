@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add a new investor</h1>
+
+<form action="/investors" method="post">
+
+    <label for="name">Input the investor name</label>
+    <input type="text" id="name" name="name">
+
+    <label for="email">Input the investor's email</label>
+    <input type="text" id="email" name="email">
+
+
+    <input class="btn btn--action" type='submit'>
+
+
+</form>
+
+{% endblock %}

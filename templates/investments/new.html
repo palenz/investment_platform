@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add new investment</h1>
+
+<form action="/investments" method="post">
+    
+    <label for="investor">Select an investor:</label>
+      <select name="investor_id" id="investor">
+        {% for investor in investors %}
+        <option value="{{investor.id}}">{{investor.name}}</option>
+        {% endfor %}
+      </select>
+    
+    <label for="company">Select a company:</label>
+      <select name="company_id" id="company">
+        {% for company in companies %}
+        <option value="{{company.id}}">{{ company.name }}</option>
+        {% endfor %}
+      </select>
+        
+
+    <label for="investor">Input the investor</label>
+    <label for="investor">Investor name:</label>
+    <input type="text" id="investor" name="investor">
+
+    <label for="investor">Input the investor</label>
+    <label for="investor">Investor name:</label>
+    <input type="text" id="investor" name="investor">
+
+
+    <input class="btn btn--action" type='submit'>
+
+
+</form>
+
+{% endblock %}
+
+<!-- Investor and company must be objects, so they must be created first -->

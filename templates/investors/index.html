@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Investors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>email</th>
+  </tr>
+  {% for investor in investors %}
+  <tr>
+    <td><a href="/investors/{{investor.id}}"> {{investor.name}} </a></td>
+    <td>|</td>
+    <td>{{investor.email}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<a href="/investors/new">Add a new investor</a>
+
+{% endblock %}

@@ -2,15 +2,27 @@
 <html>
 <head>
   <title>Code Capital Investment Platform</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/UNDEFINED.css') }}">
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/UNDEFINED.css') }}"> -->
+  <!-- The links to the CSS templates go here  -->
 </head>
 <body>
 <main>
-  <section id="content">
+    <ul>
+        <li>
+            <a href="/investments">Investments</a>
+        </li>
+        <li>
+            <a href="/investors">Investors</a>
+        </li>
+        <li>
+            <a href="/companies">Portfolio companies</a>
+        </li>
+    </ul>
+    <section id="content">
       {% block content %}
 
       {% endblock%}
-  </section>
-  </main>
+    </section>
+</main>
 </body>
 </html>

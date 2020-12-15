@@ -32,7 +32,7 @@ def create_investment():
 
     return redirect('/investments')
 
-@investments_blueprint.route("investments/<id>/delete", methods=['POST'])
+@investments_blueprint.route("/investments/<id>/delete", methods=['POST'])
 def delete_investment(id):
     investment_repository.delete(id)
     return redirect('/investments')
