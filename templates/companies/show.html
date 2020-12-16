@@ -12,9 +12,20 @@
     <li>{{investor.name}}</li>
     {% endfor %}
 </ul>
+<br>
+<h3>{{company.name}}'s historical valuation</h3>
 
-<form action="/companies/{{company.id}}/delete" method="POST">
-    <input class="btn btn--danger" type="submit" value="delete" />
-</form>
+<ul>
+{% for investment in investments %}
+<li>{{investment.valuation}}</li>
+{%endfor%}
+</ul>
 
 {% endblock %}
+
+<!-- <ul>
+    <li>investment.valuation</li>
+    <li>investment.date</li>
+</ul> -->
+
+

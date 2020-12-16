@@ -12,8 +12,8 @@ import repositories.investor_repository as investor_repository
 import repositories.company_repository as company_repository
 
 def save(investment):
-    sql = 'INSERT INTO investments (investor_id, company_id, equity, payment, date) VALUES (%s, %s, %s, %s, %s) RETURNING id'
-    values = [investment.investor.id, investment.company.id, investment.equity, investment.payment, investment.date]
+    sql = 'INSERT INTO investments (investor_id, company_id, equity, payment, date_of_investment) VALUES (%s, %s, %s, %s, %s) RETURNING id'
+    values = [investment.investor.id, investment.company.id, investment.equity, investment.payment, investment.date_of_investment]
     results = run_sql (sql, values)
     investment.id = results[0]['id']
     return investment
@@ -27,7 +27,7 @@ def select_all():
     for row in results:
         investor = investor_repository.select(row['investor_id'])
         company = company_repository.select(row['company_id'])
-        investment = Investment(investor, company, row['equity'], row['payment'], row['date'], row['id'])
+        investment = Investment(investor, company, row['equity'], row['payment'], row['date_of_investment'], row['id'])
         investments.append(investment)
     
     return investments
@@ -54,3 +54,4 @@ def delete(id):
     sql = 'DELETE FROM investments WHERE id=%s'
     values = [id]
     run_sql(sql, values)
+

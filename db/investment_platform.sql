@@ -18,7 +18,7 @@ CREATE TABLE investments (
     id SERIAL PRIMARY KEY,
     investor_id INT REFERENCES investors(id) ON DELETE CASCADE,
     company_id INT REFERENCES companies(id) ON DELETE CASCADE,
-    equity INT,
+    equity DECIMAL,
     payment INT,
     date_of_investment DATE
 );

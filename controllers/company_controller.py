@@ -4,19 +4,23 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.company import Company
 import repositories.company_repository as company_repository
+import repositories.investment_repository as investment_repository
 
 companies_blueprint = Blueprint("companies", __name__)
 
 @companies_blueprint.route("/companies")
 def companies():
-    companies = company_repository.select_all() # adds a new company
+    companies = company_repository.select_all()
+    # company_valuation = investment_repository.valuation()
     return render_template("companies/index.html", companies = companies)
 
 @companies_blueprint.route("/companies/<id>")
 def show(id):
     company = company_repository.select(id)
     investors = company_repository.investors(company)
-    return render_template("companies/show.html", company=company, investors=investors)
+    valuations = company_repository.investments(id)
+    # company_valuation = investment_repository.valuation()
+    return render_template("companies/show.html", company=company, investors=investors, valuations=valuations)
 
 @companies_blueprint.route("/companies/<id>/delete", methods=['POST'])
 def delete_company(id):

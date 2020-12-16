@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{investor.name}} </h1>
+
+<a href="mailto:{{investor.email}}">{{investor.email}}</a>
+
+<h3>{{investor.name}}'s investments:</h3>
+
+<ul>
+    {% for company in companies %}
+    <li>{{company.name}}</li>
+    {% endfor %}
+</ul>
+
+<form action="/investors/{{investor.id}}/delete" method="POST">
+    <input class="btn btn--danger" type="submit" value="delete" />
+</form>
+
+{% endblock %}

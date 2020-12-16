@@ -5,20 +5,28 @@
 <h1>Companies</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Name</th>
     <th></th>
     <th>Industry</th>
+    <th></th>
+    <th>Current valuation</th>
+  </thead>
+  <tbody>
   </tr>
   {% for company in companies %}
   <tr>
     <td><a href="/companies/{{company.id}}"> {{company.name}} </a></td>
     <td>|</td>
     <td>{{ company.industry }}</td>
+    <td>|</td>
+    <td>{{ company.valuation }}</td>
   </tr>
   {% endfor %}
+  </tbody>
 </table>
-
+<br>
 <a href="/companies/new">Add a new company</a>
 
 {% endblock %}

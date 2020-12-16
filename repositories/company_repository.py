@@ -52,3 +52,20 @@ def delete(id):
     sql = 'DELETE FROM companies WHERE id=%s'
     values = [id]
     run_sql(sql, values)
+
+def investments(company):
+    investments = []
+
+    sql = 'SELECT * FROM investments WHERE company_id=%s'
+    values = [company]
+    results = run_sql(sql, values)
+
+    for row in results:
+        investments.append(row)
+    
+    return investments
+
+
+
+
+

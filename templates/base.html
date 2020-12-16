@@ -2,12 +2,16 @@
 <html>
 <head>
   <title>Code Capital Investment Platform</title>
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/UNDEFINED.css') }}"> -->
-  <!-- The links to the CSS templates go here  -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
 </head>
 <body>
 <main>
-    <ul>
+    <div id='menu-wrapper'>
+    <ul id='menu'>
+        <li>
+            <a href="/">Home</a>
+        </li>
         <li>
             <a href="/investments">Investments</a>
         </li>
@@ -18,6 +22,7 @@
             <a href="/companies">Portfolio companies</a>
         </li>
     </ul>
+    </div>
     <section id="content">
       {% block content %}
 

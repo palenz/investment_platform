@@ -4,16 +4,37 @@
 
 <h1>Investments</h1>
 
-<p class="btn--wrapper">
+<table>
+    <tr>
+      <th>Investor</th>
+      <th></th>
+      <th>Company</th>
+      <th></th>
+      <th>Equity bought</th>
+      <th></th>
+      <th>Price</th>
+      <th></th>
+      <th>Current company valuation</th>
+  
+    </tr>
+    {% for investment in investments %}
+    <tr>
+      <td>{{investment.investor.name}}</a></td>
+      <td>|</td>
+      <td>{{investment.company.name}}</td>
+      <td>|</td>
+      <td>{{investment.equity}}%</td>
+      <td>|</td>
+      <td>£{{investment.payment}}</td>
+      <td>|</td>
+      <td>£{{investment.valuation}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+  <p class="btn--wrapper">
     <a class="btn btn--action" href="/investments/new">New investment round</a>
 </p>
-
-<ul>
-    {% for investment in investments %}
-    <li>
-        <p>{{investment.investor.name}} - {{investment.company.name}} - {{investment.equity}}</p>
-    </li>
-    {% endfor %}
-</ul>
 
 {% endblock %}
