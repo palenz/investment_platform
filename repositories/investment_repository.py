@@ -7,13 +7,15 @@ from db.run_sql import run_sql
 from models.investment import Investment
 from models.company import Company
 from models.investor import Investor
+import pdb
 
 import repositories.investor_repository as investor_repository
 import repositories.company_repository as company_repository
 
 def save(investment):
+    # pdb.set_trace()
     sql = 'INSERT INTO investments (investor_id, company_id, equity, payment, date_of_investment) VALUES (%s, %s, %s, %s, %s) RETURNING id'
-    values = [investment.investor.id, investment.company.id, investment.equity, investment.payment, investment.date_of_investment]
+    values = [investment.investor.id, investment.company.id, float(investment.equity), investment.payment, investment.date_of_investment]
     results = run_sql (sql, values)
     investment.id = results[0]['id']
     return investment

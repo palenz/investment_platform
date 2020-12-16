@@ -6,7 +6,6 @@ class Investment:
         self.equity = equity
         self.payment = payment
         self.date_of_investment = date_of_investment
-        self.valuation = int((100*int(payment))/int(equity))
         self.id = id
 
 # class SimpleInvestment:

@@ -25,7 +25,7 @@
     </tr>
     {% for investment in investments %}
     <tr>
-      <td>{{ investment['date'] }} </a></td>
+      <td>{{ investment['date'].strftime('%d %b %Y') }} </a></td>
       <td>£{{ investment['valuation'] }}</td>
     </tr>
     {% endfor %}
