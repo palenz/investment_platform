@@ -12,20 +12,25 @@
     <li>{{investor.name}}</li>
     {% endfor %}
 </ul>
-<br>
+
 <h3>{{company.name}}'s historical valuation</h3>
 
-<ul>
-{% for investment in investments %}
-<li>{{investment.valuation}}</li>
-{%endfor%}
-</ul>
+<table>
+    <thead>
+    <tr>
+      <th>Investment date</th>
+      <th>Valuation</th>
+    </thead>
+    <tbody>
+    </tr>
+    {% for investment in investments %}
+    <tr>
+      <td>{{ investment['date'] }} </a></td>
+      <td>£{{ investment['valuation'] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 
-{% endblock %}
 
-<!-- <ul>
-    <li>investment.valuation</li>
-    <li>investment.date</li>
-</ul> -->
-
-
+  {% endblock %}

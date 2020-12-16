@@ -5,31 +5,26 @@
 <h1>Investments</h1>
 
 <table>
+    <thead>
     <tr>
       <th>Investor</th>
-      <th></th>
       <th>Company</th>
-      <th></th>
-      <th>Equity bought</th>
-      <th></th>
+      <th>Equity</th>
       <th>Price</th>
-      <th></th>
       <th>Current company valuation</th>
-  
     </tr>
+    </thead>
+    <tbody>
     {% for investment in investments %}
     <tr>
       <td>{{investment.investor.name}}</a></td>
-      <td>|</td>
       <td>{{investment.company.name}}</td>
-      <td>|</td>
       <td>{{investment.equity}}%</td>
-      <td>|</td>
       <td>£{{investment.payment}}</td>
-      <td>|</td>
       <td>£{{investment.valuation}}</td>
     </tr>
     {% endfor %}
+    </tbody>
   </table>
 
 

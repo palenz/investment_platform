@@ -5,16 +5,20 @@
 <h1>Investors</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Name</th>
     <th>email</th>
   </tr>
+  </thead>
+  <tbody>
   {% for investor in investors %}
   <tr>
     <td><a href="/investors/{{investor.id}}"> {{investor.name}} </a></td>
     <td>{{investor.email}}</td>
   </tr>
   {% endfor %}
+  </tbody>
 
 </table>
 

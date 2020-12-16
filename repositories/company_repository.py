@@ -53,6 +53,7 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
+
 def investments(company):
     investments = []
 
@@ -61,11 +62,9 @@ def investments(company):
     results = run_sql(sql, values)
 
     for row in results:
-        investments.append(row)
+        val = int((100*int(row['payment']))/int(row['equity']))
+        investment = {'valuation':val, 'date':row['date_of_investment']}
+        
+        investments.append(investment)    
     
     return investments
-
-
-
-
-

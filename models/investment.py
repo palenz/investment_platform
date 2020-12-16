@@ -8,3 +8,9 @@ class Investment:
         self.date_of_investment = date_of_investment
         self.valuation = int((100*int(payment))/int(equity))
         self.id = id
+
+# class SimpleInvestment:
+    
+#     def __init__(self, company, equity, payment, date_of_investment):
+#         self.company = company
+#         self.equity = 

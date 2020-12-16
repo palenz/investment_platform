@@ -8,9 +8,7 @@
   <thead>
   <tr>
     <th>Name</th>
-    <th></th>
     <th>Industry</th>
-    <th></th>
     <th>Current valuation</th>
   </thead>
   <tbody>
@@ -18,10 +16,8 @@
   {% for company in companies %}
   <tr>
     <td><a href="/companies/{{company.id}}"> {{company.name}} </a></td>
-    <td>|</td>
     <td>{{ company.industry }}</td>
-    <td>|</td>
-    <td>{{ company.valuation }}</td>
+    <td>None lol</td>
   </tr>
   {% endfor %}
   </tbody>

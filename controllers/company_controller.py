@@ -18,9 +18,8 @@ def companies():
 def show(id):
     company = company_repository.select(id)
     investors = company_repository.investors(company)
-    valuations = company_repository.investments(id)
-    # company_valuation = investment_repository.valuation()
-    return render_template("companies/show.html", company=company, investors=investors, valuations=valuations)
+    investments = company_repository.investments(id)
+    return render_template("companies/show.html", company=company, investors=investors, investments=investments)
 
 @companies_blueprint.route("/companies/<id>/delete", methods=['POST'])
 def delete_company(id):
