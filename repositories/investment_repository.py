@@ -57,3 +57,13 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
+def total_invested():
+    total_invested = 0
+    sql ='SELECT * FROM investments'
+
+    results = run_sql(sql)
+
+    for row in results:
+        total_invested += row['payment']
+
+    return total_invested

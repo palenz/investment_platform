@@ -68,3 +68,14 @@ def investments(company):
         investments.append(investment)    
     
     return investments
+
+def count():
+    companies = 0
+
+    sql = 'SELECT * FROM companies'
+    results = run_sql(sql)
+
+    for row in results:
+        companies += 1
+    
+    return companies
