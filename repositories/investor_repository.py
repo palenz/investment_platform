@@ -53,3 +53,14 @@ def delete(id):
     sql = 'DELETE FROM investors WHERE id=%s'
     values = [id]
     run_sql(sql, values)
+
+def count():
+    number_of_investors = 0
+    
+    sql = 'SELECT * FROM investors'
+    results = run_sql(sql)
+
+    for row in results:
+        number_of_investors += 1
+    
+    return number_of_investors

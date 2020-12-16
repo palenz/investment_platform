@@ -16,7 +16,8 @@ app.register_blueprint(investments_blueprint)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    number_of_investors = 1
+    return render_template('index.html', number_of_investors=number_of_investors)
 
 if __name__ == '__main__':
     app.run(debug=True) 
