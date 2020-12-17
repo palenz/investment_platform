@@ -4,14 +4,10 @@
   <title>Code Capital Investment Platform</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
-</head>
-<body>
-<main>
-    <div id='menu-wrapper'>
+
+<div id='menu-wrapper'>
     <ul id='menu'>
-        <li>
-            <a href="/">Home</a>
-        </li>
+        <li style="float:left"><a class="active" href="/">Home</a>
         <li>
             <a href="/investments">Investments</a>
         </li>
@@ -22,12 +18,16 @@
             <a href="/companies">Portfolio companies</a>
         </li>
     </ul>
-    </div>
+</div>
+
+</head>
+
+<body>
     <section id="content">
       {% block content %}
 
       {% endblock%}
     </section>
-</main>
 </body>
+
 </html>
